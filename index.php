@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if ($dados) {
         $_SESSION["user_id"] = $dados["id_usuario"];
         $_SESSION["nome"] = $dados["nome_usuario"];
-        header("Location: atribuir_tarefa.php");
+        header("Location: atribuir_tarefa.php?user_id=" . $dados["id_usuario"]);
         exit;
     } else {
         $msg = "Usuário ou senha incorretos!";
